@@ -1,8 +1,11 @@
 # Nơi tập hợp các công cụ triển khai OpenStack 
 
 ## Nhóm phát triển
+- Nhóm tài trợ lab: ECONET
+- Nhóm tài trợ chỗ ngồi: MDT
 - Nhóm phát triển: #VietStack Team
-- Nhóm test: #hocchudong Team
+- Nhóm test: #hocchudong Team, nhóm sinh viên ĐHBK
+
 
 ### Mô hình
 
