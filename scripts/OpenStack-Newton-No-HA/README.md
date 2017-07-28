@@ -399,11 +399,71 @@ openstack server list
 
 - Trong qúa trình chạy, màn hình sẽ yêu cầu nhập mật khẩu root của máy SWIFT1, SWIFT2. Sau khi thực thi xong, script sẽ cài các gói bổ trợ cho máy chủ SWIFT1, SWIFT2.
 
-##### 6.2.2. Cài đặt các thành phần của Swift trên controller node.
-- Đứng trên máy chủ controller, thực hiện script dưới để cài đặt các gói và cấu hình Swift 
-```sh
+##### 6.2.2. Cài đặt các thành phần của Swift trên các máy chủ swift
+- Đứng trên máy chủ swift, thực hiện script dưới để cài đặt các gói và cấu hình Swift.
+- Lưu ý: Thực hiện bước này ở cả máy chủ `SWIFT1` và `SWIFT2`
+	```sh
+	curl -O https://raw.githubusercontent.com/congto/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/noha_swift_install.sh
 
-```
+	bash noha_swift_install.sh
+	```
+- Sau khi cài thực thi xong script trên tại các máy chủ `SWIFT1` và `SWIFT2`, chuyển qua máy chủ controller để thực thi script tiếp.
 
+##### 6.2.3. Cài đặt các thành phần của Swift trên máy chủ controller
+- Login vào máy chủ controller với quyền `root` và di duyển vào thư mục chưa script
+	```sh
+	cd /root/OpenStack-Newton-No-HA
+	bash noha_ctl_swift.sh
+	```
 
+- Sau khi cài đặt xong, chuyển xuống bước kiểm tra hoạt động của swift
 
+##### 6.2.4. Kiểm tra hoạt động của swift
+- Đứng trên node controller thực hiện lệnh dưới để kiểm tra hoạt động của swift
+- Chuyển sang tài khoản demo của openstack để kiểm tra hoạt động của swift
+	```sh
+	source demo-openrc
+	```
+
+- Sử dụng lệnh `swift stat` để kiểm tra hoạt động của swift
+	```sh
+	swift stat
+	```
+		- Kết quả của lệnh như sau
+			```sh
+							Account: AUTH_e55055376e334a5abd37e0d4ba53e172
+					 Containers: 0
+							Objects: 0
+								Bytes: 0
+			X-Put-Timestamp: 1501206933.80630
+					X-Timestamp: 1501206933.80630
+					 X-Trans-Id: tx44caecab4db246bda200e-00597a9995
+				 Content-Type: text/plain; charset=utf-8
+			````
+
+- Tạo `container` cho swift
+	```sh
+	openstack container create container1
+	```
+
+- Tạo 1 file để up lên swift 
+	```sh
+	echo "OpenStack" > /root/file_test.txt
+	```
+
+- Upload file `file_test.txt` lên container vừa tạo.
+	```sh
+	openstack object create container1 file_test.txt
+	```
+
+- Kiểm tra container1 vừa tạo xem đã có file được up lên hay chưa.
+	```sh 
+	openstack object list container1
+	```
+
+- Down file vừa up bằng lệnh dưới.
+	```sh
+	openstack object save container1 file_test.txt
+	```
+
+- Bạn cũng có thể login vào tài khoản demo để quan sát Object Storage ở tab http://prntscr.com/g18ik9
