@@ -17,8 +17,8 @@
 [Hướn dẫn sử dụng script cài đặt OpenStack Newton không HA](https://github.com/vietstacker/openstack-deploy-tools/tree/master/scripts/OpenStack-Newton-No-HA)
 ### Thông tin về script cài đặt OpenStack Newton không có HA
 
-- Script dùng để tìm hiểu, dựng PoC với phiên bản OpenStack Newton.
-- Các project gồm có: Keystone, Glance, Cinder,Nova, Neuton, Ceilometer,Gnocchi, AODH, Swift
+- Script dùng để tìm hiểu, dựng PoC với phiên bản OpenStack Newton - triển khai trên CentOS7.
+- Các project gồm có: Keystone, Glance, Cinder,Nova, Neuton, Ceilometer,Gnocchi, AODH, Swift.
 - Về Neutron: 
  - Sử dụng Linux Bridge - `done`
  - Sử dụng đồng thời provider và selfservice network - `done`
