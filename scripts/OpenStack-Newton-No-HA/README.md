@@ -32,14 +32,14 @@
 - Trên Compute2 thực hiện
 
 	```sh
-	curl -O https://raw.githubusercontent.com/congto/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/setup_ip.sh
+	curl -O https://raw.githubusercontent.com/vietstacker/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/setup_ip.sh
 	bash setup_ip.sh compute2 192.168.20.35 10.10.0.35 172.16.20.35 192.168.40.35
 	```
 
 - Thực hiện trên máy Cinder
 
 	```sh
-	curl -O https://raw.githubusercontent.com/congto/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/setup_ip.sh
+	curl -O https://raw.githubusercontent.com/vietstacker/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/setup_ip.sh
 
 	bash setup_ip.sh cinder1 192.168.20.36 10.10.0.36 172.16.20.36 192.168.40.36
 	```
@@ -57,7 +57,7 @@
 - Cài đặt git và script cài đặt.
 	```sh
 	yum -y install git
-	git clone https://github.com/congto/openstack-deploy-tools.git
+	git clone https://github.com/vietstacker/openstack-deploy-tools.git
 
 	mv openstack-deploy-tools/scripts/OpenStack-Newton-No-HA /root/
 
@@ -234,7 +234,7 @@
 - Tải script cài đặt nova và neutron cho Compute1
 
 	```sh
-	curl -O https://raw.githubusercontent.com/congto/openstack-HA/master/scripts/noha/noha_com_install.sh
+	curl -O https://raw.githubusercontent.com/vietstacker/openstack-HA/master/scripts/noha/noha_com_install.sh
 	
 	bash noha_com_install.sh
 	```
@@ -348,7 +348,7 @@ openstack server list
 
 - Login vào máy chủ cinder và thực thi script dưới và khai báo các tham số về hostname và IP của các NICs.
 	```sh
-	curl -O https://raw.githubusercontent.com/congto/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/setup_ip.sh
+	curl -O https://raw.githubusercontent.com/vietstacker/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/setup_ip.sh
 
 	bash setup_ip.sh cinder1 192.168.20.36 10.10.0.36 172.16.20.36 192.168.40.36
 	```
@@ -364,7 +364,7 @@ openstack server list
 
 - Login vào máy chủ cinder và thực hiện script dưới tại thư mục root. Lưu ý, ở script trên đã copy file `config.cfg` từ máy chủ controller sang máy chủ cinder. 
 	```sh
-	curl -O https://github.com/congto/openstack-deploy-tools/blob/master/scripts/OpenStack-Newton-No-HA/noha_cinder_install.sh
+	curl -O https://github.com/vietstacker/openstack-deploy-tools/blob/master/scripts/OpenStack-Newton-No-HA/noha_cinder_install.sh
 
 	bash noha_cinder_install.sh
 	```
@@ -395,7 +395,7 @@ openstack server list
 #### Thực hiện trên máy chủ SWIFT1
 - Login vào máy chủ SWIFT1 với quyền root và thực hiện script dưới.
 	```sh 
-	curl -O https://raw.githubusercontent.com/congto/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/setup_ip.sh
+	curl -O https://raw.githubusercontent.com/vietstacker/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/setup_ip.sh
 
 	bash setup_ip.sh swift1  192.168.20.37 10.10.0.37 172.16.20.37 192.168.40.37
 	```
@@ -403,7 +403,7 @@ openstack server list
 #### Thực hiện trên máy chủ SWIFT2
 - Login vào máy chủ SWIFT1 với quyền root và thực hiện script dưới.
 	```sh 
-	curl -O https://raw.githubusercontent.com/congto/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/setup_ip.sh
+	curl -O https://raw.githubusercontent.com/vietstacker/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/setup_ip.sh
 
 	bash setup_ip.sh swift2  192.168.20.38 10.10.0.38 172.16.20.38 192.168.40.38
 	```
@@ -424,7 +424,7 @@ openstack server list
 - Đứng trên máy chủ swift, thực hiện script dưới để cài đặt các gói và cấu hình Swift.
 - Lưu ý: Thực hiện bước này ở cả máy chủ `SWIFT1` và `SWIFT2`
 	```sh
-	curl -O https://raw.githubusercontent.com/congto/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/noha_swift_install.sh
+	curl -O https://raw.githubusercontent.com/vietstacker/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/noha_swift_install.sh
 
 	bash noha_swift_install.sh
 	```
