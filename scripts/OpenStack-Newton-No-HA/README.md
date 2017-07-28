@@ -19,13 +19,13 @@
 ### 1.1. Đặt IP theo IP Planning cho từng node.
 - Trên Controller thực hiện
 	```sh
-	curl -O https://raw.githubusercontent.com/congto/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/setup_ip.sh
+	curl -O https://raw.githubusercontent.com/vietstacker/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/setup_ip.sh
 	bash setup_ip.sh controller1 192.168.20.33 10.10.0.33 172.16.20.33 192.168.40.33
 	```
 
 - Trên Compute1 thực hiện
 	```sh
-	curl -O https://raw.githubusercontent.com/congto/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/setup_ip.sh
+	curl -O https://raw.githubusercontent.com/vietstacker/openstack-deploy-tools/master/scripts/OpenStack-Newton-No-HA/setup_ip.sh
 	bash setup_ip.sh compute1 192.168.20.34 10.10.0.34 172.16.20.34 192.168.40.34
 	```
 
@@ -452,16 +452,17 @@ openstack server list
 	```
 
 	- Kết quả của lệnh như sau
-		```sh
-						Account: AUTH_e55055376e334a5abd37e0d4ba53e172
-				 Containers: 0
-						Objects: 0
-							Bytes: 0
-		X-Put-Timestamp: 1501206933.80630
-				X-Timestamp: 1501206933.80630
-				 X-Trans-Id: tx44caecab4db246bda200e-00597a9995
-			 Content-Type: text/plain; charset=utf-8
-		```
+	
+	```sh
+					Account: AUTH_e55055376e334a5abd37e0d4ba53e172
+			 Containers: 0
+					Objects: 0
+						Bytes: 0
+	X-Put-Timestamp: 1501206933.80630
+			X-Timestamp: 1501206933.80630
+			 X-Trans-Id: tx44caecab4db246bda200e-00597a9995
+		 Content-Type: text/plain; charset=utf-8
+	```
 
 - Tạo `container` cho swift
 	```sh
