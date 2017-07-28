@@ -23,8 +23,8 @@
 - Script dùng để tìm hiểu, dựng PoC với phiên bản OpenStack Newton - triển khai trên CentOS7.
 - Các project gồm có: Keystone, Glance, Cinder,Nova, Neuton, Ceilometer,Gnocchi, AODH, Swift.
 - Về Neutron: 
- - Sử dụng Linux Bridge - `done`
- - Sử dụng đồng thời provider và selfservice network - `done`
+	 - [] Sử dụng Linux Bridge - `done`
+	 - [] Sử dụng đồng thời provider và selfservice network - `done`
 - Cinder: Cung cấp tùy chọn cài đặt AIO hoặc tách node cinder. - `done`
 - Swift: sử dụng 02 node swift - `done`
 - Ceilometer, Gnocchi, AODH - `done`
