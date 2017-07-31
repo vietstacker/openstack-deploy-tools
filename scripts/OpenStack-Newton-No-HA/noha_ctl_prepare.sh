@@ -14,8 +14,9 @@ function echocolor {
 
 }
 
+
 function ops_edit {
-    crudini --set $1 $2 $3 $4
+    crudini --set "$1" "$2" "$3" "$4"
 }
 
 # Cach dung
@@ -28,7 +29,7 @@ function ops_edit {
 
 # Ham de del mot dong trong file cau hinh
 function ops_del {
-    crudini --del $1 $2 $3
+    crudini --del "$1" "$2" "$3"
 }
 
 function copykey {
@@ -60,6 +61,7 @@ function install_proxy {
         done
 
 }
+
 function install_repo_galera {
         for IP_ADD in $CTL1_IP_NIC1 $COM1_IP_NIC1 $COM2_IP_NIC1
         do
@@ -162,9 +164,9 @@ sleep 3
 copykey
 setup_config
 
-echocolor "Cai dat proxy tren cac node"
-sleep 3
-install_proxy
+# echocolor "Cai dat proxy tren cac node"
+# sleep 3
+# install_proxy
 
 echocolor "Cai dat repo tren cac node"
 sleep 3
